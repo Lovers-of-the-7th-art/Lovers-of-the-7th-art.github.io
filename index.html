@@ -73,6 +73,22 @@ footer a{color:var(--blood);text-decoration:none}
 .back-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;background:var(--red);border:none;border-radius:50%;color:#fff;cursor:pointer;display:none;align-items:center;justify-content:center;font-size:1.2rem;transition:all .2s;z-index:100;box-shadow:0 4px 15px rgba(139,0,0,.4)}
 .back-top:hover{background:var(--blood);transform:scale(1.1)}
 .back-top.show{display:flex}
+.top50-btn{padding:10px 18px;background:linear-gradient(135deg,#8b0000,#cc0000);border:1px solid #ff2020;border-radius:6px;color:#fff;font-size:.85rem;font-weight:700;cursor:pointer;text-transform:uppercase;letter-spacing:1px;transition:all .3s;white-space:nowrap}
+.top50-btn:hover{background:linear-gradient(135deg,#a00,#e00);box-shadow:0 0 20px rgba(204,0,0,.4);transform:scale(1.03)}
+.top50-btn.active{background:linear-gradient(135deg,#cc0000,#ff2020);box-shadow:0 0 30px rgba(255,32,32,.5);animation:pulse-glow 2s infinite}
+@keyframes pulse-glow{0%,100%{box-shadow:0 0 20px rgba(255,32,32,.4)}50%{box-shadow:0 0 40px rgba(255,32,32,.7)}}
+.rank-badge{position:absolute;top:0;right:0;width:42px;height:42px;background:linear-gradient(135deg,#cc0000,#8b0000);display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:900;color:#fff;border-radius:0 8px 0 12px;z-index:2;text-shadow:0 1px 2px rgba(0,0,0,.5)}
+.movie.top50-card{border-color:rgba(204,0,0,.4);background:linear-gradient(135deg,rgba(139,0,0,.08),var(--card))}
+.movie.top50-card:hover{border-color:rgba(204,0,0,.6);box-shadow:0 8px 30px rgba(139,0,0,.3)}
+.movie.top50-card::before{opacity:1;background:linear-gradient(to bottom,#cc0000,#8b0000)}
+.severity-bar{margin-top:8px;height:4px;border-radius:2px;background:#222;overflow:hidden}
+.severity-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,#ff6600,#cc0000,#8b0000)}
+.severity-label{font-size:.65rem;color:var(--blood);text-transform:uppercase;letter-spacing:.5px;margin-top:3px;font-weight:600}
+.top50-header{grid-column:1/-1;text-align:center;padding:20px;margin-bottom:10px}
+.top50-header h2{font-size:clamp(1.2rem,3vw,1.8rem);font-weight:800;text-transform:uppercase;letter-spacing:3px;color:var(--blood);text-shadow:0 0 30px rgba(204,0,0,.3)}
+.top50-header p{font-size:.85rem;color:var(--text-dim);margin-top:8px;max-width:700px;margin-left:auto;margin-right:auto;line-height:1.5}
+.top50-header .source-tags{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:12px}
+.top50-header .src-tag{padding:3px 10px;border-radius:12px;font-size:.65rem;border:1px solid #333;color:var(--text-dim);text-transform:uppercase;letter-spacing:.5px}
 .warning{max-width:800px;margin:0 auto;padding:16px 20px;text-align:center}
 .warning-box{background:rgba(139,0,0,.1);border:1px solid rgba(139,0,0,.3);border-radius:8px;padding:16px 20px;font-size:.82rem;color:var(--text-dim);line-height:1.5}
 .warning-box strong{color:var(--blood)}
@@ -127,6 +143,7 @@ header{padding:40px 16px 30px}
 <select id="countrySelect">
 <option value="">All Countries</option>
 </select>
+<button class="top50-btn" id="top50Btn" title="Show the 50 most extreme films ranked by severity">&#9760; TOP 50 MOST EXTREME</button>
 </div>
 <div class="tags" id="tagContainer"></div>
 <div class="grid" id="movieGrid"></div>
@@ -1245,11 +1262,47 @@ const M=[
 ["Angel's Egg",1985,"Mamoru Oshii","Japan","Animation","A girl protects a mysterious egg in a dark, gothic world. Ethereal and haunting."],
 ["Violence Voyager",2018,"Ujicha","Japan","Animation","Children discover a deadly amusement park. Made entirely with paper cutout animation."],
 ["The House",2022,"Various","UK","Animation","Stop-motion anthology of three darkly surreal stories set in the same house across eras."],
-["Coraline",2009,"Henry Selick","USA","Animation","A girl discovers an alternate world with a button-eyed Other Mother. Dark children's horror."]
+["Coraline",2009,"Henry Selick","USA","Animation","A girl discovers an alternate world with a button-eyed Other Mother. Dark children's horror."],
+["A Perfect Child of Satan",2012,"Lucifer Valentine","Canada","Underground","A prostitute's blind date becomes a hellish violent nightmare. 21-minute extreme short by the Vomit Gore director."],
+["Cutting Moments",1997,"Douglas Buck","USA","Short Film","A suburban housewife's silent suffering erupts into graphic self-mutilation. Tom Savini effects. Seminal extreme short."],
+["The Great American Snuff Film",2003,"Sean Tretta","USA","Underground","Two serial killers abduct women to produce a snuff film. NC-17 for prolonged sadistic torture and aberrant sexuality."],
+["Ma Mère",2004,"Christophe Honoré","France/Spain","Drama","A widowed mother initiates her teenage son into her hedonistic world. Adaptation of Bataille's incestuous novel. NC-17 rated."],
+["Voyage to Agatis",2010,"Marian Dora","Germany","Extreme Horror","A wealthy couple lures a prostitute onto a yacht and subjects her to humiliation and extreme violation. Marian Dora extreme art film."],
+["Debris Documentar",2003,"Marian Dora","Germany","Underground","Marian Dora's debut feature. A man planning his own extreme film works on a zombie set. Contains never-before-seen footage from Melancholie der Engel."],
+["Thomas und Marco",2022,"Marian Dora","Germany","Documentary","An intimate documentary with Marian Dora's two underground actors. Contains unseen footage from Melancholie der Engel, Voyage to Agatis, and other Dora films."],
+["Kids",1995,"Larry Clark","USA","Drama","A day in the life of New York skater teens: sex, drugs, and HIV. Described as borderline child exploitation. NC-17. Written by Harmony Korine."],
+["Em Nome da Razão",1979,"Helvécio Ratton","Brazil","Documentary","Short documentary about the Hospital Colônia de Barbacena — Brazil's psychiatric Holocaust where 60,000 patients died in inhuman conditions."],
+["Vazante",2017,"Daniela Thomas","Brazil","Drama","A slow-burn black-and-white colonial Brazil drama depicting slavery, child marriage, and systematic violence against enslaved people."],
+["Inner Depravity Vol. 1",2000,"Damon Fox","USA","Underground","Extreme underground SOV anthology of graphic horror vignettes. Part of the extreme micro-budget horror wave."],
+["The Desire of Maria D.",2011,"Marian Dora","Germany","Underground","A woman's obsessive and self-destructive desires unfold in Doran's extreme art-horror style. Controversial German underground film."],
+["Carcinoma",2014,"Marian Dora","Germany","Underground","A cancer patient's final days documented with extreme intimacy and body horror. Marian Dora's most personal and disturbing work."],
+["Bloodrome",2013,"Joe McReynolds","USA","Underground","Underground extreme horror anthology pushing the boundaries of depravity and gore in the SOV tradition."],
+["I Love Snuff",2012,"Various","USA","Underground","Extreme underground pseudo-snuff anthology. One of the most transgressive ultra-low-budget horror collections."],
+["Black Mass of the Nazi Sex Wizard",2015,"Brandon Slagle","USA","Underground","Extreme cult ritual horror blending Nazisploitation and occult transgression. Shock value underground cinema."],
+["Lolita Vibrator Torture",1987,"Masaru Konuma","Japan","Exploitation","Japanese pink film exploring extreme captivity and sadism. Part of the Nikkatsu Roman Porno tradition pushed to its limits."],
+["Zoom",2015,"Pedro Morelli","Brazil/Canada","Drama","A dizzying meta-narrative where a cartoonist, a film director, and a novelist create each other across three interlinked stories."],
+["Looky Loo",2025,"Various","USA","Underground","Recent extreme underground short pushing shock cinema boundaries. 2025 micro-budget transgressive horror."]
 ];
 const MOVIES=M.map(m=>({t:m[0],y:m[1],d:m[2],c:m[3],g:m[4],desc:m[5]}));
 const seen=new Set();const movies=[];
 for(const m of MOVIES){const k=m.t.toLowerCase().replace(/[^a-z0-9]/g,'');if(!seen.has(k)){seen.add(k);movies.push(m);}}
+const TOP50=[
+"A Serbian Film","Salò, or the 120 Days of Sodom","August Underground's Mordum",
+"Guinea Pig: Flower of Flesh and Blood","Slaughtered Vomit Dolls","Melancholie der Engel",
+"Cannibal Holocaust","Martyrs","Men Behind the Sun","Nekromantik",
+"Guinea Pig: Devil's Experiment","Irreversible","The Human Centipede 2","Grotesque",
+"August Underground","August Underground's Penance","Philosophy of a Knife",
+"Slow Torture Puke Chamber","ReGOREgitated Sacrifice","Inside",
+"Antichrist","Murder-Set-Pieces","I Spit on Your Grave","The House That Jack Built",
+"Henry: Portrait of a Serial Killer","Atroz","The Bunny Game","Visitor Q",
+"Ichi the Killer","Subconscious Cruelty","Tumbling Doll of Flesh","Singapore Sling",
+"Pink Flamingos","The Green Elephant","Vase de Noces","Thanatomorphose",
+"Life and Death of a Porno Gang","Audition","Hostel","Bone Tomahawk",
+"Terrifier 2","High Tension","The Sadness","Frontier(s)",
+"I Saw the Devil","Ebola Syndrome","Baise-moi","The Girl Next Door","Schramm","Begotten"
+];
+const top50Map=new Map();TOP50.forEach((t,i)=>top50Map.set(t,i+1));
+let top50Active=false;
 const categories=[...new Set(movies.map(m=>m.g))].sort();
 const countries=[...new Set(movies.flatMap(m=>m.c.split(/[\/,]/).map(s=>s.trim())))].sort();
 const grid=document.getElementById('movieGrid');
@@ -1292,6 +1345,11 @@ statsBar.innerHTML=`<div class="stat"><div class="stat-num">${movies.length}</di
 `<div class="stat"><div class="stat-num">${Math.max(...movies.map(m=>m.y))}</div><div class="stat-label">Latest</div></div>`;
 }
 function getFiltered(){
+if(top50Active){
+let list=movies.filter(m=>top50Map.has(m.t));
+list.sort((a,b)=>top50Map.get(a.t)-top50Map.get(b.t));
+return list;
+}
 const q=searchInput.value.toLowerCase().trim();
 const decade=decadeSelect.value;
 const country=countrySelect.value;
@@ -1313,18 +1371,54 @@ function render(){
 const list=getFiltered();
 totalCount.textContent=movies.length;
 if(!list.length){grid.innerHTML='<div class="no-results">No films found matching your criteria.</div>';return;}
-grid.innerHTML=list.map(m=>`<div class="movie">
+let html='';
+if(top50Active){
+html+=`<div class="top50-header">
+<h2>&#9760; Top 50 Most Extreme Films &#9760;</h2>
+<p>Ranked by severity based on disturbing movie iceberg charts, extreme cinema communities, YouTube channels (Refúgio Cult, Getro, ColdRaven), Reddit r/disturbingmovies, and genre databases worldwide.</p>
+<div class="source-tags">
+<span class="src-tag">Iceberg Charts</span>
+<span class="src-tag">Reddit</span>
+<span class="src-tag">Refúgio Cult</span>
+<span class="src-tag">Getro</span>
+<span class="src-tag">ColdRaven</span>
+<span class="src-tag">Letterboxd</span>
+<span class="src-tag">BBFC Bans</span>
+<span class="src-tag">Video Nasties</span>
+</div></div>`;
+}
+html+=list.map(m=>{
+const rank=top50Map.get(m.t);
+const isTop50=top50Active&&rank;
+const severity=isTop50?Math.max(5,100-((rank-1)*2)):0;
+return `<div class="movie${isTop50?' top50-card':''}">
+${isTop50?`<div class="rank-badge">#${rank}</div>`:''}
 <div class="movie-header"><span class="movie-title">${m.t}</span><span class="movie-year">${m.y}</span></div>
 <div class="movie-meta"><span class="movie-cat ${catClass(m.g)}">${m.g}</span>${m.c?`<span class="movie-country">${m.c}</span>`:''}</div>
 ${m.d?`<div class="movie-director">Dir. ${m.d}</div>`:''}
 ${m.desc?`<div class="movie-desc">${m.desc}</div>`:''}
-</div>`).join('');
+${isTop50?`<div class="severity-bar"><div class="severity-fill" style="width:${severity}%"></div></div>
+<div class="severity-label">Severity: ${severity}%</div>`:''}
+</div>`;}).join('');
+grid.innerHTML=html;
 }
 renderTags();renderStats();render();
-let debounce;searchInput.addEventListener('input',()=>{clearTimeout(debounce);debounce=setTimeout(render,200);});
-sortSelect.addEventListener('change',render);
-decadeSelect.addEventListener('change',render);
-countrySelect.addEventListener('change',render);
+const top50Btn=document.getElementById('top50Btn');
+top50Btn.addEventListener('click',()=>{
+top50Active=!top50Active;
+top50Btn.classList.toggle('active',top50Active);
+if(top50Active){
+searchInput.value='';activeTag='';decadeSelect.value='';countrySelect.value='';sortSelect.value='year-desc';
+tagContainer.querySelectorAll('.tag').forEach(b=>b.classList.remove('active'));
+tagContainer.querySelector('[data-tag=""]').classList.add('active');
+}
+render();
+window.scrollTo({top:0,behavior:'smooth'});
+});
+let debounce;searchInput.addEventListener('input',()=>{clearTimeout(debounce);debounce=setTimeout(()=>{if(top50Active){top50Active=false;top50Btn.classList.remove('active');}render();},200);});
+sortSelect.addEventListener('change',()=>{if(top50Active){top50Active=false;top50Btn.classList.remove('active');}render();});
+decadeSelect.addEventListener('change',()=>{if(top50Active){top50Active=false;top50Btn.classList.remove('active');}render();});
+countrySelect.addEventListener('change',()=>{if(top50Active){top50Active=false;top50Btn.classList.remove('active');}render();});
 window.addEventListener('scroll',()=>{backTop.classList.toggle('show',window.scrollY>600);});
 backTop.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'});});
 </script>
