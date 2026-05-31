@@ -110,7 +110,7 @@ header{padding:40px 16px 30px}
 <header>
 <h1>Extreme <span>&</span> Disturbing <span>Cinema</span> Archive</h1>
 <p class="tagline">The most comprehensive catalog of extreme films ever assembled</p>
-<div class="counter">Cataloged: <strong id="totalCount">0</strong> films &bull; From <strong>1903</strong> to <strong>2025</strong></div>
+<div class="counter">Cataloged: <strong id="totalCount">0</strong> films &bull; From <strong id="earliestYear">0</strong> to <strong id="latestYear">0</strong></div>
 </header>
 <div class="warning">
 <div class="warning-box">
@@ -150,7 +150,7 @@ header{padding:40px 16px 30px}
 <button class="back-top" id="backTop" title="Back to top">&uarr;</button>
 <footer>
 <p>Extreme & Disturbing Cinema Archive &bull; For educational and archival purposes only</p>
-<p style="margin-top:6px">Sources: Disturbing Movies Iceberg charts, Video Nasties DPP list, cult cinema communities, film criticism archives, and genre databases.</p>
+<p style="margin-top:6px">Sources: Disturbing Movies Iceberg charts, Video Nasties DPP list, cult cinema communities, film criticism archives, genre databases, and regional research from <a href="https://sitgesfilmfestival.com/" target="_blank" rel="noopener">Sitges</a>, <a href="https://www.festival-cannes.com/" target="_blank" rel="noopener">Festival de Cannes</a>, <a href="https://www.labiennale.org/en/cinema" target="_blank" rel="noopener">La Biennale di Venezia</a>, <a href="https://www.criterion.com/" target="_blank" rel="noopener">Criterion</a>, <a href="https://www.bfi.org.uk/" target="_blank" rel="noopener">BFI</a>, and <a href="https://www.idfa.nl/" target="_blank" rel="noopener">IDFA</a>.</p>
 </footer>
 <script>
 const M=[
@@ -1302,7 +1302,132 @@ const M=[
 ["Divided Into Zero",2005,"Shawn Cg Poole","USA","Underground","Extreme transgressive underground film with no commercial release."],
 ["Registros Fatais 3: Apocalipse",2015,"Unknown","Brazil","Underground","Brazilian extreme found footage compilation. Part of the Registros Fatais shock series."],
 ["Inato",2018,"Unknown","Brazil","Underground","Obscure Brazilian extreme film appearing in deep-tier extreme horror iceberg lists."],
-["Death2Fuffar",2009,"Unknown","Sweden","Underground","Swedish extreme underground film notorious in Scandinavian underground extreme communities."]
+["Death2Fuffar",2009,"Unknown","Sweden","Underground","Swedish extreme underground film notorious in Scandinavian underground extreme communities."],
+// === 2026, Censored Classics, Heavy Drama, and Disturbing Animation ===
+["Obsession",2026,"Curry Barker","USA","Horror","A hopeless romantic breaks a mysterious wish-granting trinket to win his crush's heart and receives a sinister version of exactly what he wanted."],
+["The Devils",1971,"Ken Russell","UK","Art House","Religious hysteria and political repression engulf 17th-century Loudun. Heavily censored and banned in several markets."],
+["Punishment Park",1971,"Peter Watkins","USA","Drama","Political prisoners are forced to cross a desert while pursued by armed authorities in a confrontational pseudo-documentary."],
+["Scum",1979,"Alan Clarke","UK","Drama","A brutal portrait of violence, abuse, and institutional failure inside a British borstal."],
+["The Seventh Continent",1989,"Michael Haneke","Austria","Drama","A middle-class family follows its numbing daily routine toward a devastating and methodical conclusion."],
+["Clean, Shaven",1993,"Lodge Kerrigan","USA","Psychological Horror","A man with schizophrenia searches for his daughter while struggling against invasive voices and a fractured perception of reality."],
+["The Reflecting Skin",1990,"Philip Ridley","UK/Canada","Psychological Horror","A boy in rural 1950s America interprets abuse, death, and adult secrets through a nightmarish imagination."],
+["The Celebration",1998,"Thomas Vinterberg","Denmark","Drama","A birthday dinner collapses after a son publicly confronts the family patriarch with a devastating accusation."],
+["Breaking the Waves",1996,"Lars von Trier","Denmark","Drama","A deeply religious woman is pushed toward escalating sacrifice after her husband is paralyzed."],
+["Bastard Out of Carolina",1996,"Anjelica Huston","USA","Drama","A girl endures poverty, family denial, and abuse in a harrowing adaptation of Dorothy Allison's novel."],
+["The War Zone",1999,"Tim Roth","UK","Drama","A teenager uncovers abuse within his family in an uncompromising domestic drama."],
+["L.I.E.",2001,"Michael Cuesta","USA","Drama","A neglected teenager drifts into a dangerous relationship with an older man after his mother's death."],
+["Found",2012,"Scott Schirmer","USA","Extreme Horror","A bullied boy discovers that his older brother is a serial killer and becomes trapped between fascination and terror."],
+["Nothing Bad Can Happen",2013,"Katrin Gebbe","Germany","Drama","A vulnerable young Christian is drawn into a household where manipulation and cruelty escalate relentlessly."],
+["The Seasoning House",2012,"Paul Hyett","UK","Extreme Horror","A deaf girl held captive in a wartime brothel searches for a way to survive and escape."],
+["The Feast",2021,"Lee Haven Jones","UK","Folk Horror","A quiet server arrives at a wealthy Welsh family's dinner and the evening turns into an ecological nightmare."],
+["Project Wolf Hunting",2022,"Kim Hong-sun","South Korea","Extreme Horror","A cargo ship transporting violent prisoners becomes the setting for an exceptionally bloody siege."],
+["Red Rooms",2023,"Pascal Plante","Canada","Psychological Horror","A woman becomes fixated on the trial of an accused murderer and the missing evidence surrounding the case."],
+["The Girl with the Needle",2024,"Magnus von Horn","Denmark/Poland","Drama","A factory worker in postwar Copenhagen accepts help from a woman hiding a horrifying secret."],
+["The King of Pigs",2011,"Yeon Sang-ho","South Korea","Animation","Two former classmates revisit the systemic bullying and violence that shaped their childhoods."],
+["Padak",2012,"Lee Dae-hee","South Korea","Animation","A captured fish refuses to accept life in a restaurant tank in a bleak survival allegory."],
+["The Fake",2013,"Yeon Sang-ho","South Korea","Animation","A violent outcast confronts a fraudulent religious scheme preying on a village marked for flooding."],
+["Birdboy: The Forgotten Children",2015,"Alberto Vazquez, Pedro Rivero","Spain","Animation","Teenagers try to escape an ecologically ruined island haunted by violence, addiction, and despair."],
+["Seoul Station",2016,"Yeon Sang-ho","South Korea","Animation","A zombie outbreak spreads from Seoul Station while a young woman struggles to survive the collapsing city."],
+["Tower",2016,"Keith Maitland","USA","Animation","Animated documentary recreating the 1966 University of Texas tower shooting through survivor testimony."],
+["Tehran Taboo",2017,"Ali Soozandeh","Germany/Austria","Animation","Rotoscoped drama about women navigating repression, hypocrisy, and exploitation in Tehran."],
+["Have a Nice Day",2017,"Liu Jian","China","Animation","A stolen bag of cash draws desperate people into a darkly comic spiral of crime and violence."],
+["Kill It and Leave This Town",2020,"Mariusz Wilczynski","Poland","Animation","A grieving man retreats into an abrasive, surreal city of memories, loss, and decaying figures."],
+["Rocks in My Pockets",2014,"Signe Baumane","Latvia/USA","Animation","A personal animated history of depression, suicide, and inherited mental illness across generations of women."],
+["The Spine of Night",2021,"Philip Gelatt, Morgan Galen King","USA","Animation","Hand-drawn fantasy follows a corrupting source of power through centuries of graphic violence."],
+["Unicorn Wars",2022,"Alberto Vazquez","Spain/France","Animation","Cute recruits enter a brutal holy war in a pastel-colored antiwar nightmare."],
+["Princess",2006,"Anders Morgenthaler","Denmark","Animation","A missionary returns home after his sister's death and pursues revenge against the adult-film industry that exploited her."],
+["Waltz with Bashir",2008,"Ari Folman","Israel","Animation","An animated documentary explores fragmented memories of war and culminates in the aftermath of a massacre."],
+["The Tragedy of Man",2011,"Marcell Jankovics","Hungary","Animation","A vast animated adaptation follows humanity through cycles of idealism, brutality, and collapse."],
+// === INTERNATIONAL EXPANSION: LATIN AMERICA AND THE CARIBBEAN ===
+["1978",2024,"Luciano Onetti, Nicolás Onetti","Argentina","Extreme Horror","During Argentina's military dictatorship, torturers abduct the wrong group of people and unleash an occult nightmare."],
+["Murder Me, Monster",2018,"Alejandro Fadel","Argentina","Horror","A rural police officer investigates decapitations in the Andes as the case drifts into creature horror and delirium."],
+["The Silent House",2010,"Gustavo Hernández","Uruguay","Horror","A woman becomes trapped inside an isolated house in a low-budget Uruguayan nightmare staged as one continuous take."],
+["The Last Matinee",2020,"Maximiliano Contenti","Uruguay/Argentina","Slasher","A rainy-day screening in a nearly empty Montevideo cinema becomes a stalking ground for a serial killer."],
+["Morgue",2019,"Hugo Cardozo","Paraguay","Horror","A security guard working overnight in a morgue faces increasingly terrifying events."],
+["Blood of the Condor",1969,"Jorge Sanjinés","Bolivia","Drama","An Indigenous Bolivian community discovers a foreign-backed medical program secretly sterilizing local women."],
+["The Milk of Sorrow",2009,"Claudia Llosa","Peru/Spain","Drama","A young woman lives with trauma inherited from the violence endured by her mother during Peru's internal conflict."],
+["The Entity",2015,"Eduardo Schuldt","Peru","Found Footage","Film students investigating an online video discover a lethal supernatural presence."],
+["Satanás",2007,"Andrés Baiz","Colombia/Mexico","Thriller","Three lives converge around a lonely veteran before a real-life-inspired Bogotá massacre."],
+["The Squad",2011,"Jaime Osorio Márquez","Colombia/Argentina/Spain","Psychological Horror","Soldiers investigating a silent mountain outpost turn against each other under fear and isolation."],
+["The House at the End of Time",2013,"Alejandro Hidalgo","Venezuela","Supernatural Horror","A woman returns to the house where a family tragedy occurred and confronts its impossible history."],
+["Crónicas",2004,"Sebastián Cordero","Ecuador/Mexico","Thriller","A television reporter chasing a child-murder story makes a morally ruinous bargain with a prisoner."],
+["La Llorona",2019,"Jayro Bustamante","Guatemala/France","Folk Horror","A former Guatemalan dictator acquitted of genocide is haunted by the country's unresolved violence."],
+["Juan of the Dead",2011,"Alejandro Brugués","Cuba/Spain","Horror","Havana residents improvise a business killing zombies as their city collapses around them."],
+["The Cutlass",2017,"Darisha J. Beresford","Trinidad and Tobago","Thriller","A young woman abducted into the Trinidadian wilderness must survive an armed sociopath."],
+// === INTERNATIONAL EXPANSION: EUROPE ===
+["The Forest of Lost Souls",2017,"José Pedro Lopes","Portugal","Psychological Horror","Two strangers meet in a forest known as a destination for suicide, but one of them has concealed intentions."],
+["Os Canibais",1988,"Manoel de Oliveira","Portugal/France","Art House","An aristocratic marriage becomes a macabre operatic tale of concealed identity and cannibalism."],
+["Quo Vadis, Aida?",2020,"Jasmila Žbanić","Bosnia and Herzegovina/Austria/Romania/Netherlands/Germany/Poland/France/Norway/Turkey","War","A UN translator tries desperately to protect her family during the Srebrenica massacre."],
+["Grbavica",2006,"Jasmila Žbanić","Bosnia and Herzegovina/Austria/Germany/Croatia","Drama","A mother and daughter in postwar Sarajevo live under the long shadow of wartime sexual violence."],
+["Fine Dead Girls",2002,"Dalibor Matanić","Croatia","Drama","A lesbian couple moving into a Zagreb apartment building face escalating harassment and violence."],
+["4 Months, 3 Weeks and 2 Days",2007,"Cristian Mungiu","Romania","Drama","Two students navigate a dangerous illegal abortion during the final years of Ceaușescu's regime."],
+["Beyond the Hills",2012,"Cristian Mungiu","Romania/France/Belgium","Drama","A young woman's return to a remote monastery leads to a harrowing confrontation between faith and mental illness."],
+["Beginning",2020,"Dea Kulumbegashvili","Georgia/France","Drama","After an attack on a religious community, a minister's wife descends into isolation and terror."],
+["Nightsiren",2022,"Tereza Nvotová","Slovakia/Czech Republic","Folk Horror","A woman returning to her mountain village confronts childhood trauma, misogyny, and accusations of witchcraft."],
+["Atlantis",2019,"Valentyn Vasyanovych","Ukraine","Drama","A former soldier struggles through a desolate near-future Ukraine scarred by war and industrial ruin."],
+["Klondike",2022,"Maryna Er Gorbach","Ukraine/Turkey","War","A pregnant woman refuses to leave her damaged home as war reaches rural Donbas."],
+["A Short Film About Killing",1988,"Krzysztof Kieślowski","Poland","Drama","A senseless murder and a state execution are observed with cold, morally exhausting precision."],
+["Demon",2015,"Marcin Wrona","Poland/Israel","Supernatural Horror","A wedding at a rural Polish property is disrupted when the groom becomes possessed by a dybbuk."],
+["Hatred",2016,"Wojciech Smarzowski","Poland","War","Ethnic hatred engulfs a Polish village during the Volhynia massacres of World War II."],
+["Pilgrims",2021,"Laurynas Bareiša","Lithuania","Drama","Two people travel to a small town to reconstruct the circumstances of a murder."],
+["The Temptation of St. Tony",2009,"Veiko Õunpuu","Estonia/Sweden/Finland","Art House","A middle manager's moral crisis mutates into a stark, surreal journey through cruelty and decay."],
+["I Remember You",2017,"Óskar Thór Axelsson","Iceland","Supernatural Horror","A psychiatrist's missing-child case intersects with unsettling events at a remote house."],
+["Sennentuntschi",2010,"Michael Steiner","Switzerland/Austria","Folk Horror","A mysterious woman appears in an Alpine village and revives a disturbing mountain legend."],
+// === INTERNATIONAL EXPANSION: ASIA AND THE MIDDLE EAST ===
+["Blind Mountain",2007,"Li Yang","China/Hong Kong","Drama","A young graduate is trafficked and sold as a wife in a remote village where escape proves nearly impossible."],
+["Blind Shaft",2003,"Li Yang","China/Germany/Hong Kong","Drama","Two miners murder vulnerable workers in staged accidents to extort compensation from mine owners."],
+["An Elephant Sitting Still",2018,"Hu Bo","China","Drama","Four people endure a single bleak day in an industrial city while searching for a way out."],
+["Insiang",1976,"Lino Brocka","Philippines","Drama","A young woman living in a Manila slum turns toward revenge after betrayal and sexual violence."],
+["Kisapmata",1981,"Mike de Leon","Philippines","Psychological Horror","A controlling former police officer turns his family home into a space of surveillance, incest, and terror."],
+["KFC",2016,"Lê Bình Giang","Vietnam","Extreme Horror","Interlocking lives in Hanoi descend into a bleak cycle of violence, exploitation, and cannibalism."],
+["Cyclo",1995,"Trần Anh Hùng","Vietnam/France/Hong Kong","Drama","A bicycle-taxi driver is pulled into crime and brutality in the streets of Ho Chi Minh City."],
+["The Missing Picture",2013,"Rithy Panh","Cambodia/France","Documentary","Clay figures and archival footage reconstruct memories of life under the Khmer Rouge."],
+["S21: The Khmer Rouge Killing Machine",2003,"Rithy Panh","Cambodia/France","Documentary","Survivors and former guards return to the Tuol Sleng prison to confront the machinery of genocide."],
+["15",2003,"Royston Tan","Singapore","Drama","Singaporean teenagers drift through gangs, self-destruction, and alienation in an abrasive urban portrait."],
+["Mee Pok Man",1995,"Eric Khoo","Singapore","Drama","A lonely noodle seller forms a grim connection with a sex worker in nocturnal Singapore."],
+["Tiger Stripes",2023,"Amanda Nell Eu","Malaysia/Taiwan/Singapore/France/Germany/Netherlands/Indonesia/Qatar","Body Horror","An 11-year-old girl's puberty manifests as a rebellious and unsettling transformation."],
+["Bandit Queen",1994,"Shekhar Kapur","India","Drama","The life of Phoolan Devi is depicted through caste violence, sexual abuse, survival, and revenge."],
+["Visaranai",2015,"Vetrimaaran","India","Drama","Migrant workers are detained and tortured by police seeking an easy confession."],
+["Pihu",2016,"Vinod Kapri","India","Drama","A two-year-old girl is left alone in an apartment filled with ordinary but escalating dangers."],
+["In Flames",2023,"Zarrar Kahn","Pakistan/Canada","Supernatural Horror","After a family patriarch dies, a mother and daughter in Karachi face threats both social and supernatural."],
+["Zibahkhana",2007,"Omar Khan","Pakistan","Horror","Teenagers lost on the road encounter contaminated water, zombies, and a mace-wielding killer."],
+["Live from Dhaka",2016,"Abdullah Mohammad Saad","Bangladesh","Drama","After losing his job and mobility, a man spirals through a punishing and indifferent Dhaka."],
+["Flying Fish",2011,"Sanjeewa Pushpakumara","Sri Lanka","Drama","Three stories expose the corrosive effect of civil war on rural Sri Lankan lives."],
+["The House Is Black",1962,"Forough Farrokhzad","Iran","Documentary","A landmark poetic documentary looks without evasion at daily life inside an Iranian leper colony."],
+["Zalava",2021,"Arsalan Amiri","Iran","Folk Horror","A skeptical officer investigates a Kurdish village gripped by fear of demonic possession."],
+["The Night",2020,"Kourosh Ahari","Iran/USA","Psychological Horror","An Iranian couple trapped in a Los Angeles hotel are forced to confront secrets from their past."],
+["Paradise Now",2005,"Hany Abu-Assad","Palestine/Netherlands/Germany/France","Drama","Two Palestinian childhood friends prepare for a suicide attack while confronting their final choices."],
+["Capernaum",2018,"Nadine Labaki","Lebanon","Drama","A neglected child living on the streets of Beirut sues his parents for bringing him into a life of hardship."],
+["Big Bad Wolves",2013,"Aharon Keshales, Navot Papushado","Israel","Thriller","A suspected child murderer, a grieving father, and a police officer enter a brutal cycle of interrogation and revenge."],
+["The Golem",2018,"Doron Paz, Yoav Paz","Israel","Folk Horror","A woman summons a dangerous protector while her Jewish community faces external threat."],
+["Theeb",2014,"Naji Abu Nowar","Jordan/UAE/Qatar/UK","Drama","A Bedouin boy is forced into a perilous journey through the desert during World War I."],
+["Harmony Lessons",2013,"Emir Baigazin","Kazakhstan/Germany/France","Drama","A bullied village boy becomes consumed by systems of humiliation and violence at school."],
+["Osama",2003,"Siddiq Barmak","Afghanistan/Ireland/Japan","Drama","A girl disguises herself as a boy so her family can survive under Taliban rule."],
+["Turtles Can Fly",2004,"Bahman Ghobadi","Iraq/Iran/France","War","Children in a Kurdish refugee camp survive by clearing land mines on the eve of the Iraq War."],
+["Under the Shadow",2016,"Babak Anvari","UK/Jordan/Qatar","Supernatural Horror","During the Iran-Iraq War, a mother and daughter face an unexploded missile and an increasingly sinister presence."],
+["Holy Spider",2022,"Ali Abbasi","Denmark/Germany/Sweden/France","Thriller","A journalist investigates a serial killer targeting sex workers in the Iranian city of Mashhad."],
+["Scales",2019,"Shahad Ameen","Saudi Arabia/UAE/Iraq","Art House","A girl resists her village's ritual demand that families sacrifice daughters to sea creatures."],
+// === INTERNATIONAL EXPANSION: AFRICA ===
+["Dachra",2018,"Abdelhamid Bouchnak","Tunisia","Folk Horror","Journalism students investigating a cold case reach an isolated village with a terrifying secret."],
+["Beauty and the Dogs",2017,"Kaouther Ben Hania","Tunisia/France/Sweden/Norway/Lebanon/Qatar/Switzerland","Drama","After an assault, a Tunisian student spends a night navigating hospitals and police stations in search of help."],
+["Saloum",2021,"Jean Luc Herbulot","Senegal/France","Horror","Mercenaries hide in Senegal's Saloum delta after a heist and encounter forces tied to a violent past."],
+["Gaia",2021,"Jaco Bouwer","South Africa","Body Horror","A forest ranger encounters survivalists and a fungal ecosystem deep in the South African wilderness."],
+["Moffie",2019,"Oliver Hermanus","South Africa/UK","Drama","A conscript endures brutality and homophobia during compulsory military service in apartheid-era South Africa."],
+["Fried Barry",2020,"Ryan Kruger","South Africa","Sci-Fi Horror","A dissolute man returns from an alien encounter and wanders through a grotesque Cape Town odyssey."],
+["Ojuju",2014,"C.J. Obasi","Nigeria","Horror","Contaminated water triggers a zombie outbreak in a Nigerian neighborhood."],
+["Horses of God",2012,"Nabil Ayouch","Morocco/Belgium","Drama","Childhood friends from a Casablanca slum are gradually drawn toward violent extremism."],
+["Kandisha",2020,"Alexandre Bustillo, Julien Maury","France/Morocco","Supernatural Horror","Teenagers summon a vengeful figure rooted in Moroccan folklore after an assault."],
+["Clash",2016,"Mohamed Diab","Egypt/France","Drama","Political opponents are trapped together inside a police van during the unrest following Egypt's 2013 coup."],
+["The Night of Counting the Years",1969,"Shadi Abdel Salam","Egypt","Drama","A young man confronts his tribe's secret trade in ancient artifacts in a haunting meditation on inheritance."],
+["Papicha",2019,"Mounia Meddour","Algeria/France/Belgium/Qatar","Drama","Young women resist escalating fundamentalist violence in 1990s Algiers by organizing a fashion show."],
+["The Battle of Algiers",1966,"Gillo Pontecorvo","Algeria/Italy","War","A stark recreation of urban guerrilla warfare and colonial repression during the Algerian struggle for independence."],
+["Timbuktu",2014,"Abderrahmane Sissako","Mauritania/France","Drama","Residents of a Malian town live under the violent rules imposed by jihadist occupiers."],
+["Sometimes in April",2005,"Raoul Peck","Rwanda/USA","War","A family is torn apart during the Rwandan genocide and confronts its aftermath years later."],
+["Night of the Kings",2020,"Philippe Lacôte","Ivory Coast/France/Canada/Senegal","Drama","A new prisoner must tell stories through the night to survive inside an Ivorian prison ruled by inmates."],
+["You Will Die at Twenty",2019,"Amjad Abu Alala","Sudan/France/Egypt/Germany/Norway/Qatar","Drama","A young man grows up under a prophecy that he will die on his twentieth birthday."],
+["Difret",2014,"Zeresenay Berhane Mehari","Ethiopia","Drama","A girl abducted into marriage faces prosecution after fighting back against her captor."],
+["The Train of Salt and Sugar",2016,"Licínio Azevedo","Mozambique/Portugal/France/South Africa/Brazil","War","Civilians risk a train journey across sabotaged tracks during the Mozambican Civil War."],
+["Nairobi Half Life",2012,"David Tosh Gitonga","Kenya/Germany","Drama","An aspiring actor arriving in Nairobi is pulled into a violent criminal underworld."]
 ];
 const MOVIES=M.map(m=>({t:m[0],y:m[1],d:m[2],c:m[3],g:m[4],desc:m[5]}));
 const seen=new Set();const movies=[];
@@ -1333,6 +1458,8 @@ const decadeSelect=document.getElementById('decadeSelect');
 const countrySelect=document.getElementById('countrySelect');
 const tagContainer=document.getElementById('tagContainer');
 const totalCount=document.getElementById('totalCount');
+const earliestYear=document.getElementById('earliestYear');
+const latestYear=document.getElementById('latestYear');
 const backTop=document.getElementById('backTop');
 const statsBar=document.getElementById('statsBar');
 let activeTag='';
@@ -1359,11 +1486,13 @@ function renderStats(){
 const byDecade={};movies.forEach(m=>{const d=Math.floor(m.y/10)*10;byDecade[d]=(byDecade[d]||0)+1;});
 const byCat={};movies.forEach(m=>{byCat[m.g]=(byCat[m.g]||0)+1;});
 const topCats=Object.entries(byCat).sort((a,b)=>b[1]-a[1]).slice(0,6);
+const firstYear=Math.min(...movies.map(m=>m.y));const lastYear=Math.max(...movies.map(m=>m.y));
+earliestYear.textContent=firstYear;latestYear.textContent=lastYear;
 statsBar.innerHTML=`<div class="stat"><div class="stat-num">${movies.length}</div><div class="stat-label">Total Films</div></div>`+
 `<div class="stat"><div class="stat-num">${countries.length}</div><div class="stat-label">Countries</div></div>`+
 `<div class="stat"><div class="stat-num">${categories.length}</div><div class="stat-label">Categories</div></div>`+
-`<div class="stat"><div class="stat-num">${Math.min(...movies.map(m=>m.y))}</div><div class="stat-label">Earliest</div></div>`+
-`<div class="stat"><div class="stat-num">${Math.max(...movies.map(m=>m.y))}</div><div class="stat-label">Latest</div></div>`;
+`<div class="stat"><div class="stat-num">${firstYear}</div><div class="stat-label">Earliest</div></div>`+
+`<div class="stat"><div class="stat-num">${lastYear}</div><div class="stat-label">Latest</div></div>`;
 }
 function getFiltered(){
 if(top50Active){
