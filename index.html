@@ -67,6 +67,14 @@ select:focus{outline:none;border-color:var(--blood)}
 .cat-revenge{background:rgba(180,0,80,.2);color:#e04090}
 .cat-war{background:rgba(70,90,50,.2);color:#90b060}
 .cat-nazi{background:rgba(100,50,50,.2);color:#b07070}
+.cat-comedy{background:rgba(180,130,0,.2);color:#d4a72c}
+.cat-emotional{background:rgba(30,80,160,.25);color:#6b9bd8}
+.faq{max-width:800px;margin:0 auto;padding:30px 20px 10px}
+.faq h2{font-size:1.2rem;font-weight:800;text-transform:uppercase;letter-spacing:3px;color:var(--blood);text-align:center;margin-bottom:18px;text-shadow:0 0 30px rgba(204,0,0,.3)}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:16px 20px;margin-bottom:12px}
+.faq-item h3{font-size:.9rem;color:var(--text-bright);margin-bottom:6px}
+.faq-item p{font-size:.82rem;color:var(--text-dim);line-height:1.6}
+.faq-item em{color:var(--text);font-style:italic}
 .movie-desc{font-size:.8rem;color:#666;line-height:1.4;margin-top:6px}
 footer{text-align:center;padding:40px 20px;border-top:1px solid #1a1a1a;color:#444;font-size:.8rem}
 footer a{color:var(--blood);text-decoration:none}
@@ -114,7 +122,7 @@ header{padding:40px 16px 30px}
 </header>
 <div class="warning">
 <div class="warning-box">
-<strong>WARNING:</strong> This archive documents films widely recognized as extreme, shocking, or deeply disturbing across multiple genres and eras. Many contain graphic violence, sexual content, and profoundly unsettling themes. Viewer discretion is strongly advised. This is an educational catalog only.
+<strong>WARNING:</strong> This archive documents films widely recognized as extreme, shocking, or deeply disturbing across multiple genres and eras. Many contain graphic violence, sexual content, and profoundly unsettling themes. This is not only a gore or horror catalog — it also includes films that disturb through emotional devastation alone. Viewer discretion is strongly advised. This is an educational catalog only.
 </div>
 </div>
 <div class="stats" id="statsBar"></div>
@@ -143,11 +151,30 @@ header{padding:40px 16px 30px}
 <select id="countrySelect">
 <option value="">All Countries</option>
 </select>
-<button class="top50-btn" id="top50Btn" title="Show the 50 most extreme films ranked by severity">&#9760; TOP 50 MOST EXTREME</button>
+<button class="top50-btn" id="top50Btn" title="Show the 100 most extreme films ranked by severity">&#9760; TOP 100 MOST EXTREME</button>
 </div>
 <div class="tags" id="tagContainer"></div>
 <div class="grid" id="movieGrid"></div>
 <button class="back-top" id="backTop" title="Back to top">&uarr;</button>
+<section class="faq">
+<h2>About This Archive &mdash; FAQ</h2>
+<div class="faq-item">
+<h3>Is this site only about gore and horror?</h3>
+<p>No. This archive is not a gore catalog — it documents <em>everything that disturbs</em>. Graphic violence is only one way a film can get under your skin. Psychological dread, moral discomfort, laughter you feel guilty about, and pure emotional devastation all belong here. The common thread is not blood; it is the feeling of leaving the film changed, unsettled, or hollowed out.</p>
+</div>
+<div class="faq-item">
+<h3>Why are films like <em>Life Is Beautiful</em> and <em>Grave of the Fireflies</em> listed here?</h3>
+<p>Because they hit like a punch to the stomach. Neither shows a single graphic frame, yet both leave scars deeper than most extreme horror ever manages. A film that compromises you emotionally — that you can only watch once because your heart cannot take a second viewing — is every bit as disturbing as anything on the Top 50. That is exactly what the <em>Emotional Devastation</em> category collects.</p>
+</div>
+<div class="faq-item">
+<h3>Why is there a Dark Comedy category?</h3>
+<p>Some films disturb by making you laugh first. Comedies about suicide, terrorism, murder, and cruelty — like <em>Heathers</em>, <em>Four Lions</em>, or <em>World's Greatest Dad</em> — weaponize humor to smuggle in genuine discomfort. When the laughter dies in your throat, that is the disturbance working.</p>
+</div>
+<div class="faq-item">
+<h3>So what qualifies a film for this archive?</h3>
+<p>One question: does it disturb? Whether through extreme imagery, psychological torment, transgressive humor, or emotional ruin — if the film unsettles, haunts, or wounds the viewer, it belongs in the catalog. Gore is optional. Impact is not.</p>
+</div>
+</section>
 <footer>
 <p>Extreme & Disturbing Cinema Archive &bull; For educational and archival purposes only</p>
 <p style="margin-top:6px">Sources: Disturbing Movies Iceberg charts, Video Nasties DPP list, cult cinema communities, film criticism archives, genre databases, and regional research from <a href="https://sitgesfilmfestival.com/" target="_blank" rel="noopener">Sitges</a>, <a href="https://www.festival-cannes.com/" target="_blank" rel="noopener">Festival de Cannes</a>, <a href="https://www.labiennale.org/en/cinema" target="_blank" rel="noopener">La Biennale di Venezia</a>, <a href="https://www.criterion.com/" target="_blank" rel="noopener">Criterion</a>, <a href="https://www.bfi.org.uk/" target="_blank" rel="noopener">BFI</a>, and <a href="https://www.idfa.nl/" target="_blank" rel="noopener">IDFA</a>.</p>
@@ -819,7 +846,7 @@ const M=[
 ["The Tribe",2014,"Myroslav Slaboshpytskiy","Ukraine","Drama","Life at a boarding school for deaf students, entirely in sign language. Shocking violence."],
 ["Room",2015,"Lenny Abrahamson","Ireland/Canada","Drama","A woman and her son escape captivity after years of imprisonment. Emotionally devastating."],
 ["Son of Saul",2015,"László Nemes","Hungary","War","A Sonderkommando in Auschwitz tries to bury a body he believes is his son. Immersive Holocaust horror."],
-["Grave of the Fireflies",1988,"Isao Takahata","Japan","Animation","Two siblings struggle to survive in WWII Japan. One of the most devastating animated films."],
+["Grave of the Fireflies",1988,"Isao Takahata","Japan","Emotional Devastation","Two siblings struggle to survive in WWII Japan. Not a drop of gore — and one of the most emotionally devastating films ever made, animated or otherwise."],
 ["The Painted Bird",2019,"Václav Marhoul","Czech Republic","Drama","A Jewish boy wanders through WWII Eastern Europe enduring extreme cruelty. 169 minutes of suffering."],
 ["Saul fia",2015,"László Nemes","Hungary","War","A prisoner in Auschwitz attempts to give a proper burial to a boy he claims as his son."],
 ["The Killing Fields",1984,"Roland Joffé","UK","War","A journalist and his translator survive the Khmer Rouge genocide in Cambodia."],
@@ -1430,6 +1457,7 @@ const M=[
 ["Nairobi Half Life",2012,"David Tosh Gitonga","Kenya/Germany","Drama","An aspiring actor arriving in Nairobi is pulled into a violent criminal underworld."],
 // === 2026 ===
 ["Backrooms",2026,"Kane Parsons","USA","Found Footage","A24 feature by 20-year-old Kane Parsons (creator of the viral YouTube series), produced by James Wan, Shawn Levy, and Osgood Perkins. Wide US release May 29, 2026 — $117.9M box office. Explorers descend into an infinite liminal labyrinth of yellow wallpaper and buzzing fluorescent light while being hunted by something with no name and no mercy."],
+["Saccharine",2026,"Natalie Erika James","Australia","Body Horror","Sundance 2026 Midnight premiere (Jan 22), US release May 22. A lovelorn medical student, Hana, falls for an obscure weight-loss craze built on eating human ashes — and is then hunted by the ghost of the person she is consuming. Disordered eating and weight stigma rendered as literal body horror."],
 // === MISSING THRILLERS / DISTURBING DRAMA ===
 ["Session 9",2001,"Brad Anderson","USA","Psychological Horror","An asbestos crew working inside an abandoned Massachusetts psychiatric hospital slowly fractures. One worker discovers tape recordings of a patient with multiple personalities, and the building begins to consume them all."],
 ["The Strangers",2008,"Bryan Bertino","USA","Thriller","A couple is terrorized for hours by three masked strangers at a remote vacation house. Motive: 'Because you were home.' One of the most effective home-invasion horror films ever made."],
@@ -1497,7 +1525,34 @@ const M=[
 ["The Baby",1973,"Ted Post","USA","Psychological Horror","A social worker investigates a family keeping their adult son in diapers and a crib, disciplined with a cattle prod. One of the most genuinely deranged American films of the 70s."],
 ["Death Game",1977,"Peter S. Traynor","USA","Exploitation","Two young women invade a married man's home and subject him to a weekend of psychological and sexual torture. Later remade by Eli Roth as Knock Knock."],
 ["Don't Deliver Us from Evil",1971,"Joël Séria","France","Drama","Two convent schoolgirls dedicate themselves to Satan and escalate from cruelty to murder. Banned outright in France for blasphemy; loosely inspired by the Parker-Hulme case."],
-["What Ever Happened to Baby Jane?",1962,"Robert Aldrich","USA","Psychological Thriller","A faded child star holds her paralyzed sister captive in a decaying mansion, escalating from petty cruelty to outright torture. The template for domestic psycho-horror."]
+["What Ever Happened to Baby Jane?",1962,"Robert Aldrich","USA","Psychological Thriller","A faded child star holds her paralyzed sister captive in a decaying mansion, escalating from petty cruelty to outright torture. The template for domestic psycho-horror."],
+// ERIC STANZE / SCRAPBOOK LINEAGE
+["Scrapbook",2000,"Eric Stanze","USA","Underground","A serial killer holds a woman captive on a rural farm and forces her to write her suffering into the scrapbook that chronicles his past victims. Shot-on-video underground infamy — one of the most grueling captivity films ever made."],
+["Ice from the Sun",1999,"Eric Stanze","USA","Underground","A suicide's soul is recruited to destroy a sorcerer torturing the souls trapped in his limbo. Hallucinatory shot-on-video nightmare from the director of Scrapbook."],
+["Savage Harvest",1994,"Eric Stanze","USA","Horror","Friends gathered at a rural property are possessed one by one by vengeful demon spirits. Eric Stanze's gory micro-budget breakthrough."],
+["Deadwood Park",2007,"Eric Stanze","USA","Horror","A man returns to his hometown to investigate his twin brother's decades-old abduction, uncovering a history of child murders around a derelict amusement park. Stanze's most polished and mournful film."],
+["Ratline",2011,"Eric Stanze","USA","Underground","A fugitive on the run collides with Nazi occultism and a bloodline curse. Stanze reunites with Scrapbook star Emily Haack for more grim Midwest brutality."],
+// DARK COMEDY — WHEN LAUGHTER HURTS
+["Heathers",1988,"Michael Lehmann","USA","Dark Comedy","A teenager and her sociopathic boyfriend start murdering popular kids and staging the deaths as suicides. Pitch-black high school satire about teen suicide and mass violence."],
+["Serial Mom",1994,"John Waters","USA","Dark Comedy","A picture-perfect suburban mother cheerfully murders anyone who violates her code of etiquette. John Waters' gleeful satire of true-crime celebrity worship."],
+["Fargo",1996,"Joel Coen","USA","Dark Comedy","A desperate car salesman hires two criminals to kidnap his own wife, and bodies pile up in the Minnesota snow. The Coens' woodchipper-famous comedy of banal, escalating evil."],
+["Very Bad Things",1998,"Peter Berg","USA","Dark Comedy","A Las Vegas bachelor party ends with a dead sex worker, and the cover-up spirals into murder after murder. A comedy so mean-spirited it leaves viewers genuinely rattled."],
+["World's Greatest Dad",2009,"Bobcat Goldthwait","USA","Dark Comedy","After his hateful son dies in a humiliating accident, a failed writer fakes a suicide note that turns the boy into a saint. Robin Williams in the darkest comedy of his career."],
+["Four Lions",2010,"Chris Morris","UK","Dark Comedy","Four hopelessly incompetent British jihadists plan a suicide attack. A comedy that makes you laugh at the unthinkable — then punishes you for laughing."],
+["The Voices",2014,"Marjane Satrapi","USA/Germany","Dark Comedy","A cheerful factory worker's talking cat urges him to kill, and he listens. Candy-colored comedy wrapped around a genuinely bleak portrait of psychosis."],
+// EMOTIONAL DEVASTATION — NO GORE REQUIRED
+["Life Is Beautiful",1997,"Roberto Benigni","Italy","Emotional Devastation","A Jewish father turns a concentration camp into an elaborate game to shield his young son from the horror around them. No gore, nothing graphic on screen — and it still lands like a punch to the stomach."],
+["Sophie's Choice",1982,"Alan J. Pakula","USA","Emotional Devastation","A Holocaust survivor in Brooklyn carries the memory of an impossible choice forced on her at Auschwitz. The reveal is one of the most shattering scenes in cinema."],
+["Johnny Got His Gun",1971,"Dalton Trumbo","USA","Emotional Devastation","A WWI soldier wakes as a limbless, faceless torso — fully conscious, unable to communicate, begging to die. Perhaps the most despair-inducing anti-war film ever made."],
+["The Pianist",2002,"Roman Polanski","France/Poland","Emotional Devastation","A Jewish pianist survives the destruction of Warsaw by hiding in its ruins. Rendered without sentimentality by a director who escaped the ghetto as a child."],
+["The Boy in the Striped Pajamas",2008,"Mark Herman","UK/USA","Emotional Devastation","The young son of a Nazi commandant befriends a boy on the other side of the camp fence. The final minutes devastate everyone who sees them."],
+["Boys Don't Cry",1999,"Kimberly Peirce","USA","Emotional Devastation","The true story of Brandon Teena, a trans man raped and murdered in Nebraska in 1993. Brutal, heartbreaking, unforgettable."],
+["The Green Mile",1999,"Frank Darabont","USA","Emotional Devastation","Death row guards discover a gentle giant with a miraculous gift — and must execute him anyway. Three hours that end in collective weeping."],
+["Million Dollar Baby",2004,"Clint Eastwood","USA","Emotional Devastation","A waitress claws her way to a boxing title under a reluctant trainer — then the film becomes something else entirely. An emotionally merciless final act."],
+["Precious",2009,"Lee Daniels","USA","Emotional Devastation","An illiterate Harlem teenager, pregnant by her own father, fights for a way out of relentless physical and psychological abuse. Almost unbearably raw."],
+["Blue Valentine",2010,"Derek Cianfrance","USA","Emotional Devastation","A marriage collapses in real time, intercut with the falling-in-love that started it. A quietly ruinous portrait of love dying of natural causes."],
+["Manchester by the Sea",2016,"Kenneth Lonergan","USA","Emotional Devastation","A withdrawn janitor is forced back to his hometown — and back to the unspeakable tragedy he caused. A study of grief that refuses to offer healing."],
+["The Whale",2022,"Darren Aronofsky","USA","Emotional Devastation","A 600-pound recluse tries to reconnect with his estranged daughter before his body gives out. Brendan Fraser's Oscar-winning gut punch."]
 ];
 const MOVIES=M.map(m=>({t:m[0],y:m[1],d:m[2],c:m[3],g:m[4],desc:m[5]}));
 const seen=new Set();const movies=[];
@@ -1515,7 +1570,19 @@ const TOP50=[
 "Pink Flamingos","The Green Elephant","Vase de Noces","Thanatomorphose",
 "Life and Death of a Porno Gang","Audition","Hostel","Bone Tomahawk",
 "Terrifier 2","High Tension","The Sadness","Frontier(s)",
-"I Saw the Devil","Ebola Syndrome","Baise-moi","The Girl Next Door","Schramm","Begotten"
+"I Saw the Devil","Ebola Syndrome","Baise-moi","The Girl Next Door","Schramm","Begotten",
+"Snuff 102","The Gateway Meat","Scrapbook","Naked Blood",
+"Guinea Pig: Mermaid in a Manhole","Nekromantik 2","Aftermath",
+"Black Sun: The Nanking Massacre","Where the Dead Go to Die","Cutting Moments",
+"Hate Crime","The Untold Story","Dr. Lamb","Red to Kill","Angst",
+"In a Glass Cage","Cannibal Ferox","Megan Is Missing","The Poughkeepsie Tapes",
+"Deadgirl","The Woman","Trauma","The Human Centipede","Excision",
+"In My Skin","Trouble Every Day","Fat Girl","The Piano Teacher","Funny Games",
+"Sweet Movie","Possession","Gummo","Kids","Ken Park",
+"Calvaire","Mum & Dad","Eden Lake","Wolf Creek","Macabre",
+"The Last House on the Left","Straw Dogs","A Clockwork Orange",
+"Faces of Death","Traces of Death","Suicide Club","Battle Royale",
+"Tetsuo: The Iron Man","Society","Cannibal Apocalypse","Absurd"
 ];
 const top50Map=new Map();TOP50.forEach((t,i)=>top50Map.set(t,i+1));
 let top50Active=false;
@@ -1540,7 +1607,7 @@ const map={'Extreme Horror':'extreme','Horror':'horror','Psychological Horror':'
 'Underground':'underground','Thriller':'thriller','Gore/Splatter':'gore','Drama':'drama',
 'Slasher':'slasher','Supernatural Horror':'supernatural','Short Film':'short','Documentary':'documentary',
 'Animation':'animation','Sci-Fi Horror':'scifi','Giallo':'giallo','Folk Horror':'folk',
-'Revenge':'revenge','War':'war','Nazisploitation':'nazi'};
+'Revenge':'revenge','War':'war','Nazisploitation':'nazi','Dark Comedy':'comedy','Emotional Devastation':'emotional'};
 return 'cat-'+(map[g]||'horror');
 }
 function renderTags(){
@@ -1594,14 +1661,11 @@ if(!list.length){grid.innerHTML='<div class="no-results">No films found matching
 let html='';
 if(top50Active){
 html+=`<div class="top50-header">
-<h2>&#9760; Top 50 Most Extreme Films &#9760;</h2>
-<p>Ranked by severity based on disturbing movie iceberg charts, extreme cinema communities, YouTube channels (Refúgio Cult, Getro, ColdRaven), Reddit r/disturbingmovies, and genre databases worldwide.</p>
+<h2>&#9760; Top 100 Most Extreme Films &#9760;</h2>
+<p>Ranked by severity based on disturbing movie iceberg charts, extreme cinema communities, Reddit r/disturbingmovies, film censorship records, and genre databases worldwide.</p>
 <div class="source-tags">
 <span class="src-tag">Iceberg Charts</span>
 <span class="src-tag">Reddit</span>
-<span class="src-tag">Refúgio Cult</span>
-<span class="src-tag">Getro</span>
-<span class="src-tag">ColdRaven</span>
 <span class="src-tag">Letterboxd</span>
 <span class="src-tag">BBFC Bans</span>
 <span class="src-tag">Video Nasties</span>
@@ -1610,7 +1674,7 @@ html+=`<div class="top50-header">
 html+=list.map(m=>{
 const rank=top50Map.get(m.t);
 const isTop50=top50Active&&rank;
-const severity=isTop50?Math.max(5,100-((rank-1)*2)):0;
+const severity=isTop50?Math.max(2,101-rank):0;
 return `<div class="movie${isTop50?' top50-card':''}">
 ${isTop50?`<div class="rank-badge">#${rank}</div>`:''}
 <div class="movie-header"><span class="movie-title">${m.t}</span><span class="movie-year">${m.y}</span></div>
